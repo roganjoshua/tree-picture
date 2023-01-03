@@ -1,1 +1,97 @@
 
+* Versions
+- Migration away from TFS
+- 8.6.2 /only/ for now
+- Modern recipe for Software Development
+- Prometheus standard
+- Jenkins/JIRA/nexus/docker etc.
+* Background to git
+- Invented by Linus Torvalds
+- Distributed Version Control /only/
+- Your files belong to a Repository or repo
+- Repos can be /Local/ and/or /Remote/
+* High Level
+- Distributed Version Control
+#+NAME:   fig:git
+[[./images/git.png]]
+* Getting Started
+- Install Visual Studio Code - recommended (install before git)
+- Install Git from https://git-scm.com/downloads
+  + Accept all defaults
+#+NAME:   fig:git-vs
+#+ATTR_HTML: :height 50%, :width 50%
+[[./images/git-vs.png]]
+* Getting Started
+Establishing your credentials with Remote
+- Remote is https://git.prometheusgroup.com/engica/q4-customers
+- You only need to do this once!
+- Create an ssh key
+- open git bash
+#+BEGIN_SRC console
+  ssh-keygen -t ed25519 -C "msarosi@prometheusgroup.com"
+#+END_SRC
+- Hit Enter three times, you do not need a passphrase
+- You will end up with two files here:
+#+BEGIN_SRC console
+  C:\Users\yourname\.ssh
+#+END_SRC
+* Getting Started
+Upload to Remote
+- paste the contents of id_ed2559.pub into the box
+#+NAME:   fig:sshkey
+[[./images/ssh-gitlab.png]]
+* Cloning the Customer Repository from Remote
+- You only need to do this once!
+- Open git bash
+- Go to the folder you want put files into
+#+BEGIN_SRC console
+ cd /c/my-folder
+#+END_SRC
+- The following command will create a /q4-customers/ folder
+#+BEGIN_SRC console
+git clone git@git.prometheusgroup.com:engica/q4-customers.git
+#+END_SRC
+- /All/ customers for 8.6.2 are in this remote repo
+* Visual Studio Code Extensions
+- Git Lens
+- XML (Josh Johnson)
+#+NAME:   fig:vs-ext
+#+ATTR_HTML: :height 50%, :width 50%
+[[./images/vs-ext.png]]
+* Visual Studio and Git
+- Open any folder underneath /q4-customers/
+- Visual Studio will become git aware
+#+NAME:   fig:vs-git
+[[./images/vs-git.png]]
+* Editing a File
+- Edit the file - git should notice
+- Visual Studio will show you modified with an *M*
+- when you save a file git knows there is a change
+* Adding a file
+- Visual Studio Code will show you /untracked/ files with a *U*
+- You need to stage the changes for git to start tracking them
+#+begin_src plantuml :file images/my-diagram.png
+title Git Movements
+
+Alice->Bob: Authentication Request
+note right of Bob: Bob thinks about it
+Bob->Alice: Authentication Response
+#+end_src
+
+#+RESULTS:
+[[file:my-diagram.png]]
+
+* Interacting with Git local and Remote
+- Commit
+  - *local* check-in with comments
+#+NAME:   fig:vs-git-commit
+[[./images/vs-commit.png]]
+- Push
+  - Push all your *local* commits to *remote*
+- Fetch
+  - Update your *local* git database from *remote*
+- Pull
+  - Get all changes from *remote*
+* JIRA
+- Issue type for mods
+- Customer Development
